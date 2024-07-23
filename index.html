@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/86a2af111e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#header" onclick="scrollToSection(event, 'header')">Home</a></li>
+                    <li><a href="#about" onclick="scrollToSection(event, 'about')">About</a></li>
+                    <li><a href="#services" onclick="scrollToSection(event, 'services')">Services</a></li>
+                    <li><a href="#contacts" onclick="scrollToSection(event, 'contacts')">Contacts</a></li>
+                </ul>
+                <i class="fas fa-bars"></i>
+            </nav>
+            <div class="header-text">
+                <p>Aspiring Web Developer</p>
+                <h1>Hi, I'm<span> Sreepriya KM</span></h1>
+            </div>
+        </div>
+    </div>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="image/img1.jpg" alt="my profile">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1> 
+                    <p>I am a first-year computer science engineering student at Model Engg College with a passion for coding and problem-solving. I am a beginner in Java and currently exploring web development. I am an experienced designer skilled in Figma and Canva. I'm currently trying out new things and exploring new technologies.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experiance')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Designing</span><br>Figma<br>Canva</li>
+                            <li><span>Web development</span><br>HTML<br>CSS<br>JavaScript</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experiance">
+                        <ul>
+                            <li><span>2023-Current</span><br>Executive-NSDC MEC</li>
+                            <li><span>2024-Current</span><br>First Year Executive-FOSS MEC</li>
+                            <li><span>2024-Current</span><br>Marketing team-IEDC MEC</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2021-2023</span><br>High School-Science Stream from GHSS Chathannur</li>
+                            <li><span>2023-2027</span><br>B.Tech Computer Science Engineering from Govt Model Engineering College</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-cube"></i>
+                    <h2>Web Design</h2>
+                    <p>Designing websites using Figma and Canva</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Development</h2>
+                    <p>Knowledge in HTML, CSS, JavaScript</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-regular fa-folder"></i>
+                    <h2>Data Analysis</h2>
+                    <p>Knowledge in Python, Numpy, and Pandas</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contacts">
+        <div class="container">
+            <div class="row1">
+                <div class="contact-left">
+                    <h1>Contact Me</h1>
+                    <p><i class="fa-solid fa-envelope"></i>sreepriyakm04@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>7012095287</p>
+                    <div class="social-icons">
+                        <a href="www.linkedin.com/in/sreepriya-km"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://x.com/Sreepriyakm?t=SiBQREK_BMSxFOBVYsMUkA&s=08"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/sreepriya_km_/"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                    <a href="file:///C:/Users/sreep/Downloads/Resume%20(25).pdf" download class="btn btn2">Download Resume</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright@SreePriya</p>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+        function scrollToSection(event, sectionId) {
+            event.preventDefault();
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
